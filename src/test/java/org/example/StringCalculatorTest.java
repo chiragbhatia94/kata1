@@ -25,7 +25,6 @@ class StringCalculatorTest {
     }
 
     @Nested
-    @Disabled
     @DisplayName("TDD, string add method, under development")
     class AddTest {
         @Test

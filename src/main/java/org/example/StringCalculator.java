@@ -7,6 +7,16 @@ public class StringCalculator {
      * @return sum of numbers
      */
     public int add(String numbers) {
-        return 0;
+        // handle empty string
+        if (numbers == null || numbers.isEmpty()) {
+            return 0;
+        }
+        String[] numberArray = numbers.split(",");
+        int sum = 0;
+        for (String numberString: numberArray) {
+            int number = Integer.parseInt(numberString);
+            sum += number;
+        }
+        return sum;
     }
 }
