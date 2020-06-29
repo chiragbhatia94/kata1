@@ -10,6 +10,7 @@ class StringCalculatorTest {
 
     TestInfo testInfo;
     TestReporter testReporter;
+
     @BeforeEach
     void setUp(TestInfo testInfo, TestReporter testReporter) {
         this.testInfo = testInfo;
@@ -29,7 +30,18 @@ class StringCalculatorTest {
     class AddTest {
         @Test
         void emptyString() {
-            fail("Not yet implemented");
+            assertAll(
+                    () -> assertEquals(0, stringCalculator.add(null), "null string's sum should be 0"),
+                    () -> assertEquals(0, stringCalculator.add(""), "empty string's sum should be 0")
+            );
+        }
+
+        @Test
+        void add2Numbers() {
+            assertAll(
+                    "should correctly add 2 numbers in a string",
+                    () -> assertEquals(6, stringCalculator.add("2,4"))
+            );
         }
     }
 }
