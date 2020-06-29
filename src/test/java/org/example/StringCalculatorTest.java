@@ -75,5 +75,16 @@ class StringCalculatorTest {
                             "should also handle default delimiters")
             );
         }
+
+        @Test
+        @Disabled
+        void handleCustomDelimiters() {
+            assertAll(
+                    "should handle custom delimiters",
+                    () -> assertEquals(5 + 8 + 7 + 8, stringCalculator.add("//[+][ ]\n5+8+7 8")),
+                    () -> assertEquals(5 + 8 + 7, stringCalculator.add("//[;][****]\n5;8;7****98"),
+                            "should handle delimiter with length > 1 char")
+            );
+        }
     }
 }
