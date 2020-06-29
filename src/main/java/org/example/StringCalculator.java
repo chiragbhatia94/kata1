@@ -11,9 +11,12 @@ public class StringCalculator {
         if (numbers == null || numbers.isEmpty()) {
             return 0;
         }
-        String[] numberArray = numbers.split(",");
+        String[] numberArray = numbers.split("[,\\n]");
         int sum = 0;
         for (String numberString: numberArray) {
+            if (numberString.isEmpty()) {
+                continue;
+            }
             int number = Integer.parseInt(numberString);
             sum += number;
         }

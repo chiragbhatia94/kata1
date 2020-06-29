@@ -44,7 +44,6 @@ class StringCalculatorTest {
         }
 
         @Test
-        @Disabled
         void addingNNumbers() {
             assertAll(
                     "should correctly add n numbers in a string",
@@ -53,7 +52,6 @@ class StringCalculatorTest {
         }
 
         @Test
-        @Disabled
         void handleNewLines() {
             assertAll(
                     "should correctly add a string with newline as delimiter",
