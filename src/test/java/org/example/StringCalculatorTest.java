@@ -42,5 +42,26 @@ class StringCalculatorTest {
                     () -> assertEquals(6, stringCalculator.add("2,4"))
             );
         }
+
+        @Test
+        @Disabled
+        void addingNNumbers() {
+            assertAll(
+                    "should correctly add n numbers in a string",
+                    () -> assertEquals(2 + 5 + 7 + 16, stringCalculator.add("2,5,7,16"))
+            );
+        }
+
+        @Test
+        @Disabled
+        void handleNewLines() {
+            assertAll(
+                    "should correctly add a string with newline as delimiter",
+                    () -> assertEquals(5 + 10 + 13, stringCalculator.add("\n5\n10,13")),
+                    () -> assertEquals(5 + 10 + 13, stringCalculator.add("5\n10,13\n")),
+                    () -> assertEquals(5 + 10 + 13, stringCalculator.add("\n5,10\n13,")),
+                    () -> assertEquals(5 + 10 + 13, stringCalculator.add("\n5,10\n13\n"))
+            );
+        }
     }
 }
