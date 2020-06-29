@@ -45,10 +45,13 @@ class StringCalculatorTest {
 
         @Test
         void addingNNumbers() {
-            assertAll(
-                    "should correctly add n numbers in a string",
-                    () -> assertEquals(2 + 5 + 7 + 16, stringCalculator.add("2,5,7,16"))
-            );
+            assertEquals(2 + 5 + 7 + 16, stringCalculator.add("2,5,7,16"),
+                    "should correctly add n numbers in a string");
+        }
+
+        @Test
+        void handleNumberAbove1000() {
+            assertEquals(5, stringCalculator.add("5,1001,1247"));
         }
 
         @Test

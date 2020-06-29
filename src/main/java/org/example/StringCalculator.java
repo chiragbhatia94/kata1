@@ -23,7 +23,9 @@ public class StringCalculator {
                 continue;
             }
             int number = Integer.parseInt(numberString);
-            sum += number;
+            if (number <= 1000) {
+                sum += number;
+            }
         }
         return sum;
     }
